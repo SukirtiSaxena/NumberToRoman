@@ -1,0 +1,13 @@
+{
+  "name": "NumbeToRomanConvertor",
+  "version": "1.0.0",
+  "description": "JavaScript Roman kata - to change numbers into Ronman numerals",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "eslint": "eslint ./"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
