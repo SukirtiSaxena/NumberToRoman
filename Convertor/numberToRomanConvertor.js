@@ -3,6 +3,8 @@
 const convertNormalToRoman = num => {
    if (num === undefined) throw new Error("Number is required");
    if (num === 0) return "nulla";
+   if (!Number.isInteger(num)) return "Not a number";
+   if (num > 3000) return "Too big number!!";
    const key = {
       M: 1000,
       CM: 900,

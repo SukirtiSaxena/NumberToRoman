@@ -35,4 +35,14 @@ describe("convertNormalToRoman", () => {
     expect(convertNormalToRoman(Number)).toBe('nulla');
   });
 
+  test("return 'Not a number' if number is not integer", () => {
+    const Number = 8.9;
+    expect(convertNormalToRoman(Number)).toBe('Not a number');
+  });
+
+  test("return 'Too big number!!' if number is greater than 3000", () => {
+    const Number = 4000;
+    expect(convertNormalToRoman(Number)).toBe('Too big number!!');
+  });
+
 });
