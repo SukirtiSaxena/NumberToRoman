@@ -1,4 +1,5 @@
-const { convertNormalToRoman } = require("./numberToRomanConvertor");
+const { convertNormalToRoman,
+  convertRomanToNormal } = require("./numberToRomanConvertor");
 
 describe("convertNormalToRoman", () => {
   test("return I if number is 1", () => {
@@ -46,3 +47,4 @@ describe("convertNormalToRoman", () => {
   });
 
 });
+
