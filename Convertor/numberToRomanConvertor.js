@@ -10,26 +10,26 @@ const convertNormalToRoman = num => {
    if (!Number.isInteger(num)) return "Not a number";
    if (num > 3000) return "Too big number!!";
 
-   let Roman = "";
+   let romanNbr = "";
    for (let i of Object.keys(key)) {
-      Roman += i.repeat(Math.floor(num / key[i]));
+      romanNbr += i.repeat(Math.floor(num / key[i]));
       num = num % key[i];
    };
-   return Roman;
+   return romanNbr;
 };
 
-const convertRomanToNormal = R => {
-   if (R === undefined) throw new Error("Roman Number is required");
-   for (let i = 0; i < R.length; i++) {
-      if (!['I', 'V', 'X', 'L', 'C', 'D', 'M'].includes(R[i]))
+const convertRomanToNormal = romanNumeral => {
+   if (romanNumeral === undefined) throw new Error("Roman Number is required");
+   for (let i = 0; i < romanNumeral.length; i++) {
+      if (!['I', 'V', 'X', 'L', 'C', 'D', 'M'].includes(romanNumeral[i]))
          return "Not a Roman Number";
-      if ((/(\S)(\1{3,})/g).test(R)) // Check if any char is repeated more than 3 times
+      if ((/(\S)(\1{3,})/g).test(romanNumeral)) // Check if any char is repeated more than 3 times
          return "Incorrect Roman Numeral";
    };
-   let Num = 0;
-   for (let j = 0; j < R.length; j++)
-      key[R[j]] < key[R[j + 1]] ? Num -= key[R[j]] : Num += key[R[j]];
-   return Num;
+   let normalNumber = 0;
+   for (let j = 0; j < romanNumeral.length; j++)
+      key[romanNumeral[j]] < key[romanNumeral[j + 1]] ? normalNumber -= key[romanNumeral[j]] : normalNumber += key[romanNumeral[j]];
+   return normalNumber;
 };
 
 module.exports = {
