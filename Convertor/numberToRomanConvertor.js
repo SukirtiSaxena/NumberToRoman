@@ -19,6 +19,13 @@ const convertNormalToRoman = num => {
 };
 
 const convertRomanToNormal = R => {
+   if (R === undefined) throw new Error("Roman Number is required");
+   for (let i = 0; i < R.length; i++) {
+      if (!['I', 'V', 'X', 'L', 'C', 'D', 'M'].includes(R[i]))
+         return "Not a Roman Number";
+      if ((/(\S)(\1{3,})/g).test(R)) // Check if any char is repeated more than 3 times
+         return "Incorrect Roman Numeral";
+   };
    let Num = 0;
    for (let j = 0; j < R.length; j++)
       key[R[j]] < key[R[j + 1]] ? Num -= key[R[j]] : Num += key[R[j]];
